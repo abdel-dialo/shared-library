@@ -2,16 +2,16 @@
 
 def call(String buildResult) {
   if ( buildResult == "SUCCESS" ) {
-    slackSend color: "good", message: "ABDOUL => CONGRATULATION: Job ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful ! more info ${env.JENKINS_URL}/${env.BUILD_URL}"
+    slackSend color: "good", message: "ABDOUL => CONGRATULATION: Job ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful ! more info ${env.BUILD_URL}"
   }
   else if( buildResult == "FAILURE" ) {
-    slackSend color: "danger", message: "ABDOUL => BAD NEWS:Job ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was failed ! more info ${env.JENKINS_URL}/${env.BUILD_URL}"
+    slackSend color: "danger", message: "ABDOUL => BAD NEWS:Job ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was failed ! more info ${env.BUILD_URL}"
   }
   else if( buildResult == "UNSTABLE" ) {
-    slackSend color: "warning", message: "ABDOUL => BAD NEWS:Job ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was unstable ! more info ${env.JENKINS_URL}/${env.BUILD_URL}"
+    slackSend color: "warning", message: "ABDOUL => BAD NEWS:Job ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was unstable ! more info ${env.BUILD_URL}"
   }
   else {
-    slackSend color: "danger", message: "ABDOUL => BAD NEWS:Job ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} its result was unclear ! more info ${env.JENKINS_URL}/${env.BUILD_URL}"
+    slackSend color: "danger", message: "ABDOUL => BAD NEWS:Job ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} its result was unclear ! more info ${env.BUILD_URL}"
   }
 }
 
